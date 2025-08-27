@@ -169,6 +169,15 @@ const Menu = () => {
                         {item.description}
                       </p>
                       
+                      {item.image && (
+                        <img 
+                          src={item.image} 
+                          alt={`${item.name} - ${item.description}`}
+                          className="w-full h-32 object-cover rounded-lg mb-3"
+                          data-testid={`img-${item.id}`}
+                        />
+                      )}
+                      
                       {item.specialNote && (
                         <p className="text-xs text-accent mb-4" data-testid={`special-note-${item.id}`}>
                           {item.specialNote}

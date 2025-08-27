@@ -18,7 +18,7 @@ export const menuData: MenuItem[] = [
     description: "A Smooth Blend Of Matcha And Steamed Milk",
     price: 320,
     category: "Matcha Specials",
-    image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     isSpecial: true
   },
@@ -28,7 +28,7 @@ export const menuData: MenuItem[] = [
     description: "Matcha And Steamed Milk With House Made Ginger Syrup",
     price: 340,
     category: "Matcha Specials",
-    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     isSpecial: true
   },
@@ -38,7 +38,7 @@ export const menuData: MenuItem[] = [
     description: "Matcha And Milk With Blueberry Compote",
     price: 380,
     category: "Matcha Specials",
-    image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     isSpecial: true
   },
@@ -48,7 +48,7 @@ export const menuData: MenuItem[] = [
     description: "Classic Matcha And Milk Over Ice",
     price: 350,
     category: "Matcha Specials",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     isSpecial: true
   },
@@ -58,7 +58,7 @@ export const menuData: MenuItem[] = [
     description: "Matcha with turmeric and steamed milk",
     price: 370,
     category: "Matcha Specials",
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     isSpecial: true
   },
@@ -68,7 +68,7 @@ export const menuData: MenuItem[] = [
     description: "Matcha with vanilla syrup and steamed milk",
     price: 360,
     category: "Matcha Specials",
-    image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     isSpecial: true
   },
@@ -80,7 +80,7 @@ export const menuData: MenuItem[] = [
     description: "Rich, bold, concentrated shot",
     price: 160,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -90,7 +90,7 @@ export const menuData: MenuItem[] = [
     description: "Double shot of our signature espresso",
     price: 160,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -100,7 +100,7 @@ export const menuData: MenuItem[] = [
     description: "Espresso diluted with hot water for a classic coffee experience",
     price: 180,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -110,7 +110,7 @@ export const menuData: MenuItem[] = [
     description: "Smooth espresso with steamed milk and light foam",
     price: 200,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -120,7 +120,7 @@ export const menuData: MenuItem[] = [
     description: "Equal parts espresso and warm milk",
     price: 190,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -130,7 +130,7 @@ export const menuData: MenuItem[] = [
     description: "Perfect balance of espresso, steamed milk, and foam",
     price: 190,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -140,7 +140,7 @@ export const menuData: MenuItem[] = [
     description: "Espresso with chocolate and steamed milk",
     price: 220,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -150,7 +150,7 @@ export const menuData: MenuItem[] = [
     description: "Smooth, refreshing cold coffee with a unique brewing method",
     price: 220,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -160,7 +160,7 @@ export const menuData: MenuItem[] = [
     description: "Our signature cold coffee blend",
     price: 250,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -170,7 +170,7 @@ export const menuData: MenuItem[] = [
     description: "Refreshing combination of coffee and citrus",
     price: 250,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -180,7 +180,7 @@ export const menuData: MenuItem[] = [
     description: "Premium cold brew in our signature bottle",
     price: 450,
     category: "Coffee & Espresso",
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -192,7 +192,7 @@ export const menuData: MenuItem[] = [
     description: "Tender spiced chicken with fresh vegetables",
     price: 330,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: false,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -202,7 +202,7 @@ export const menuData: MenuItem[] = [
     description: "Premium ham and cheese with crisp vegetables",
     price: 380,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: false,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -212,7 +212,7 @@ export const menuData: MenuItem[] = [
     description: "Fresh tomatoes with creamy cheese spread",
     price: 300,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -222,7 +222,7 @@ export const menuData: MenuItem[] = [
     description: "Grilled vegetables with house-made pesto",
     price: 350,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1621852004158-f3bc188ace2d?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1621852004158-f3bc188ace2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -232,7 +232,7 @@ export const menuData: MenuItem[] = [
     description: "Soft cookie with white chocolate and hazelnuts",
     price: 150,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -242,7 +242,7 @@ export const menuData: MenuItem[] = [
     description: "Buttery croissant with caramel and chocolate",
     price: 520,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -252,7 +252,7 @@ export const menuData: MenuItem[] = [
     description: "Rich, moist chocolate cake slice",
     price: 280,
     category: "Food & Bakes",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -264,7 +264,7 @@ export const menuData: MenuItem[] = [
     description: "Pure green tea leaves for a refreshing experience",
     price: 150,
     category: "Artisanal Teas",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -274,7 +274,7 @@ export const menuData: MenuItem[] = [
     description: "Black tea infused with orange blossom notes",
     price: 160,
     category: "Artisanal Teas",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1597318123967-888974e2912c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -284,7 +284,7 @@ export const menuData: MenuItem[] = [
     description: "Delicate oolong tea with rose petals",
     price: 170,
     category: "Artisanal Teas",
-    image: "https://images.unsplash.com/photo-1597318123967-888974e2912c?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -294,7 +294,7 @@ export const menuData: MenuItem[] = [
     description: "Black tea with lemon and floral notes",
     price: 160,
     category: "Artisanal Teas",
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -306,7 +306,7 @@ export const menuData: MenuItem[] = [
     description: "House-made 54% dark chocolate ganache with steamed milk",
     price: 200,
     category: "Other Beverages",
-    image: "https://images.unsplash.com/photo-1542990253-0b8cd6ba3091?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1542990253-0b8cd6ba3091?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -316,7 +316,7 @@ export const menuData: MenuItem[] = [
     description: "Daily selection of fresh fruit and vegetable juices",
     price: 180,
     category: "Other Beverages",
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   },
@@ -326,7 +326,7 @@ export const menuData: MenuItem[] = [
     description: "Fresh lemon with a hint of herbs",
     price: 150,
     category: "Other Beverages",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     isVeg: true,
     specialNote: "Fresh • Made to Order ✨"
   }
