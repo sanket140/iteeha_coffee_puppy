@@ -7,19 +7,19 @@ const HeroSection = () => {
   const carouselItems = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://iteeha.coffee/images/vfx.png",
       title: "Coffee & Craft",
       description: "Artisanal coffee meets cozy atmosphere"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://iteeha.coffee/images/e6.jpg",
       title: "Pet Paradise",
       description: "Where furry friends are family"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://iteeha.coffee/images/urmi.jpg",
       title: "Community Hub",
       description: "Stories shared over perfect cups"
     }
