@@ -3,34 +3,22 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border py-16 relative overflow-hidden coffee-beans" data-testid="footer">
+    <footer className="bg-card border-t border-border py-16" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2 space-y-6">
-            <motion.div 
-              className="flex items-center space-x-3"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center animate-bounce-slow">
-                <span className="text-primary-foreground text-xl animate-heartbeat">🐾</span>
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                <span className="text-primary-foreground text-xl">🐾</span>
               </div>
               <div>
-                <div className="font-serif font-bold text-2xl text-foreground gradient-text">Iteeha Coffee</div>
-                <div className="text-sm text-muted-foreground">& Pet Paradise ✨</div>
+                <div className="font-serif font-bold text-2xl text-foreground">Iteeha Coffee</div>
+                <div className="text-sm text-muted-foreground">& Pet Paradise</div>
               </div>
-            </motion.div>
-            <motion.p 
-              className="text-muted-foreground max-w-md"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Where every cup tells a story and every pup finds a friend. Experience the perfect blend of premium coffee and pet-friendly hospitality. ☕❤️🐕
-            </motion.p>
+            </div>
+            <p className="text-muted-foreground max-w-md">
+              Where every cup tells a story and every pup finds a friend. Experience the perfect blend of premium coffee and pet-friendly hospitality.
+            </p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="flex items-center space-x-2">
                 <span className="text-accent">✉️</span>
@@ -80,37 +68,29 @@ const Footer = () => {
               © 2024 Iteeha Coffee & Pet Paradise. All rights reserved. Made with ❤️ for coffee and dog lovers.
             </div>
             <div className="flex space-x-6">
-              <motion.a 
+              <a 
                 href="https://www.instagram.com/iteeha.coffee/" 
-                className="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-500 hover:bg-pink-500/30 transition-all duration-200 fun-hover animate-bounce-slow"
+                className="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-500 hover:bg-pink-500/30 transition-colors duration-200"
                 data-testid="link-instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, rotate: 15 }}
-                whileTap={{ scale: 0.9 }}
               >
                 📷
-              </motion.a>
-              <motion.a 
+              </a>
+              <a 
                 href="#" 
-                className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500/30 transition-all duration-200 fun-hover animate-bounce-slow"
+                className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500/30 transition-colors duration-200"
                 data-testid="link-facebook"
-                whileHover={{ scale: 1.2, rotate: -15 }}
-                whileTap={{ scale: 0.9 }}
-                style={{ animationDelay: "0.1s" }}
               >
                 📘
-              </motion.a>
-              <motion.a 
+              </a>
+              <a 
                 href="#" 
-                className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 hover:bg-green-500/30 transition-all duration-200 fun-hover animate-bounce-slow"
+                className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 hover:bg-green-500/30 transition-colors duration-200"
                 data-testid="link-whatsapp"
-                whileHover={{ scale: 1.2, rotate: 15 }}
-                whileTap={{ scale: 0.9 }}
-                style={{ animationDelay: "0.2s" }}
               >
                 💬
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>
