@@ -38,9 +38,9 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <div>
-                <span className="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold">Our Story</span>
-                <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-4" data-testid="about-title">
-                  Where Tradition Meets <span className="text-accent">Tail Wags</span>
+                <span className="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold animate-pulse-soft">✨ Our Story</span>
+                <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-4 gradient-text animate-wiggle" data-testid="about-title">
+                  Where Tradition Meets <span className="text-accent animate-heartbeat">Tail Wags</span> 🐕
                 </h2>
               </div>
               
@@ -53,22 +53,30 @@ const Home = () => {
               </p>
               
               <div className="grid grid-cols-2 gap-8">
-                <div className="text-center" data-testid="stat-resident-pups">
-                  <div className="text-3xl font-bold text-accent">12+</div>
-                  <div className="text-muted-foreground">Resident Pups</div>
-                </div>
-                <div className="text-center" data-testid="stat-mumbai-locations">
-                  <div className="text-3xl font-bold text-accent">3</div>
-                  <div className="text-muted-foreground">Mumbai Locations</div>
-                </div>
+                <motion.div 
+                  className="text-center bg-accent/10 rounded-xl p-4 fun-hover" 
+                  data-testid="stat-resident-pups"
+                  whileHover={{ scale: 1.05, rotate: [0, 2, -2, 0] }}
+                >
+                  <div className="text-3xl font-bold text-accent animate-heartbeat">12+</div>
+                  <div className="text-muted-foreground font-medium">🐾 Resident Pups</div>
+                </motion.div>
+                <motion.div 
+                  className="text-center bg-accent/10 rounded-xl p-4 fun-hover" 
+                  data-testid="stat-mumbai-locations"
+                  whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
+                >
+                  <div className="text-3xl font-bold text-accent animate-heartbeat" style={{ animationDelay: "0.2s" }}>3</div>
+                  <div className="text-muted-foreground font-medium">📍 Mumbai Locations</div>
+                </motion.div>
               </div>
               
               <Link href="/about">
                 <Button 
-                  className="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200"
+                  className="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 button-fun animate-pulse-soft magic-cursor"
                   data-testid="button-learn-more"
                 >
-                  Learn More About Us
+                  🐕 Learn More About Us ✨
                 </Button>
               </Link>
             </motion.div>
@@ -88,8 +96,8 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-4" data-testid="cta-title">
-              Come Sip & Snuggle With Us
+            <h2 className="font-serif text-4xl lg:text-5xl font-bold gradient-text mb-4 animate-wiggle relative sparkle-effect" data-testid="cta-title">
+              Come Sip & Snuggle With Us 🤗
             </h2>
             <p className="text-xl text-muted-foreground mb-8" data-testid="cta-description">
               We're brewing daily from 7:30 AM to 11:30 PM. Find us in the heart of Mumbai with our furry friends and pet paradise!
@@ -99,20 +107,20 @@ const Home = () => {
               <Link href="/contact">
                 <Button 
                   size="lg"
-                  className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
+                  className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary/90 button-fun animate-heartbeat magic-cursor"
                   data-testid="button-visit-us"
                 >
-                  Visit Us
+                  🏢 Visit Us 🐾
                 </Button>
               </Link>
               <Link href="/order-landing">
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/10 transition-colors duration-200"
+                  className="px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/10 button-fun animate-pulse-soft magic-cursor"
                   data-testid="button-order-online"
                 >
-                  Order Online
+                  🛒 Order Online ⚡
                 </Button>
               </Link>
             </div>

@@ -35,11 +35,11 @@ const Testimonials = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground" data-testid="testimonials-title">
-            Coffee Stories & Pup Tales
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold gradient-text relative sparkle-effect animate-wiggle" data-testid="testimonials-title">
+            Coffee Stories & Pup Tales 📚
           </h2>
-          <p className="text-xl text-muted-foreground" data-testid="testimonials-subtitle">
-            What our coffee lovers and pet parents say about their magical experiences
+          <p className="text-xl text-muted-foreground animate-slide-in-up" data-testid="testimonials-subtitle">
+            What our coffee lovers and pet parents say about their magical experiences ✨
           </p>
         </motion.div>
         
@@ -47,18 +47,23 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              className="bg-card rounded-2xl p-8 card-hover"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="bg-card rounded-2xl p-8 card-hover fun-hover relative border-2 border-transparent hover:border-accent/30"
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2, type: "spring", stiffness: 100 }}
               viewport={{ once: true }}
               data-testid={`testimonial-${testimonial.id}`}
+              whileHover={{ 
+                scale: 1.03,
+                rotate: [0, 1, -1, 0],
+                transition: { duration: 0.3 }
+              }}
             >
               <div className="flex items-center space-x-4 mb-6">
                 <img 
                   src={testimonial.avatar} 
                   alt={`${testimonial.name} - ${testimonial.title}`}
-                  className="w-16 h-16 rounded-full object-cover"
+                  className="w-16 h-16 rounded-full object-cover border-3 border-accent/20 animate-float"
                   data-testid={`avatar-${testimonial.id}`}
                 />
                 <div>
@@ -70,9 +75,16 @@ const Testimonials = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed" data-testid={`content-${testimonial.id}`}>
-                "{testimonial.content}"
+              <p className="text-muted-foreground leading-relaxed relative" data-testid={`content-${testimonial.id}`}>
+                <span className="text-4xl text-accent/30 absolute -top-2 -left-2">"</span>
+                {testimonial.content}
+                <span className="text-4xl text-accent/30 absolute -bottom-4 -right-2">"</span>
               </p>
+              <div className="flex justify-center mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-accent text-lg animate-pulse-soft" style={{ animationDelay: `${i * 0.1}s` }}>⭐</span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

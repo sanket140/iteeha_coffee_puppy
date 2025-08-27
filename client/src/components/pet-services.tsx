@@ -40,11 +40,11 @@ const PetServices = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground" data-testid="services-title">
-            Pet Paradise, Every Day
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold gradient-text relative sparkle-effect animate-wiggle" data-testid="services-title">
+            Pet Paradise, Every Day 🏰
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="services-subtitle">
-            We provide everything your furry friend needs! Premium pet foods, engaging toys, and a completely pet-friendly environment where tails wag and hearts are happy.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-in-up" data-testid="services-subtitle">
+            We provide everything your furry friend needs! Premium pet foods, engaging toys, and a completely pet-friendly environment where tails wag and hearts are happy. 🐕💖
           </p>
         </motion.div>
         
@@ -52,15 +52,20 @@ const PetServices = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="bg-card rounded-2xl p-8 text-center card-hover"
+              className="bg-card rounded-2xl p-8 text-center card-hover fun-hover relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
               data-testid={`service-${service.id}`}
+              whileHover={{ 
+                scale: 1.05,
+                rotate: [0, 2, -2, 0],
+                transition: { duration: 0.4 }
+              }}
             >
-              <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                <span className="text-2xl" data-testid={`icon-${service.id}`}>{service.icon}</span>
+              <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce-slow`}>
+                <span className="text-3xl animate-heartbeat" data-testid={`icon-${service.id}`}>{service.icon}</span>
               </div>
               <h3 className="font-serif text-xl font-semibold text-foreground mb-4" data-testid={`title-${service.id}`}>
                 {service.title}
@@ -82,10 +87,10 @@ const PetServices = () => {
           <Link href="/contact">
             <Button 
               size="lg"
-              className="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200"
+              className="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 button-fun animate-pulse-soft"
               data-testid="button-visit-paradise"
             >
-              Visit Our Pet Paradise!
+              🏖️ Visit Our Pet Paradise! 🎾
             </Button>
           </Link>
         </motion.div>

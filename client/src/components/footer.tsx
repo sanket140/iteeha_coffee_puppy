@@ -1,23 +1,36 @@
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border py-16" data-testid="footer">
+    <footer className="bg-card border-t border-border py-16 relative overflow-hidden coffee-beans" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2 space-y-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-primary-foreground text-xl">🐾</span>
+            <motion.div 
+              className="flex items-center space-x-3"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center animate-bounce-slow">
+                <span className="text-primary-foreground text-xl animate-heartbeat">🐾</span>
               </div>
               <div>
-                <div className="font-serif font-bold text-2xl text-foreground">Iteeha Coffee</div>
-                <div className="text-sm text-muted-foreground">& Pet Paradise</div>
+                <div className="font-serif font-bold text-2xl text-foreground gradient-text">Iteeha Coffee</div>
+                <div className="text-sm text-muted-foreground">& Pet Paradise ✨</div>
               </div>
-            </div>
-            <p className="text-muted-foreground max-w-md">
-              Where every cup tells a story and every pup finds a friend. Experience the perfect blend of premium coffee and pet-friendly hospitality.
-            </p>
+            </motion.div>
+            <motion.p 
+              className="text-muted-foreground max-w-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Where every cup tells a story and every pup finds a friend. Experience the perfect blend of premium coffee and pet-friendly hospitality. ☕❤️🐕
+            </motion.p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="flex items-center space-x-2">
                 <span className="text-accent">✉️</span>
@@ -41,11 +54,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <div className="space-y-3">
-              <Link href="/" className="block text-muted-foreground hover:text-primary transition-colors duration-200" data-testid="link-home">Home</Link>
-              <Link href="/menu" className="block text-muted-foreground hover:text-primary transition-colors duration-200" data-testid="link-menu">Our Menu</Link>
-              <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors duration-200" data-testid="link-about">About Us</Link>
-              <Link href="/order-landing" className="block text-muted-foreground hover:text-primary transition-colors duration-200" data-testid="link-order">Order Online</Link>
-              <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-colors duration-200" data-testid="link-contact">Contact</Link>
+              <Link href="/" className="block text-muted-foreground hover:text-primary transition-all duration-200 fun-hover" data-testid="link-home">🏠 Home</Link>
+              <Link href="/menu" className="block text-muted-foreground hover:text-primary transition-all duration-200 fun-hover" data-testid="link-menu">🍽️ Our Menu</Link>
+              <Link href="/about" className="block text-muted-foreground hover:text-primary transition-all duration-200 fun-hover" data-testid="link-about">🐕 About Us</Link>
+              <Link href="/order-landing" className="block text-muted-foreground hover:text-primary transition-all duration-200 fun-hover" data-testid="link-order">🛒 Order Online</Link>
+              <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-all duration-200 fun-hover" data-testid="link-contact">📞 Contact</Link>
             </div>
           </div>
           
@@ -67,29 +80,37 @@ const Footer = () => {
               © 2024 Iteeha Coffee & Pet Paradise. All rights reserved. Made with ❤️ for coffee and dog lovers.
             </div>
             <div className="flex space-x-6">
-              <a 
+              <motion.a 
                 href="https://www.instagram.com/iteeha.coffee/" 
-                className="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-500 hover:bg-pink-500/30 transition-colors duration-200"
+                className="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-500 hover:bg-pink-500/30 transition-all duration-200 fun-hover animate-bounce-slow"
                 data-testid="link-instagram"
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, rotate: 15 }}
+                whileTap={{ scale: 0.9 }}
               >
                 📷
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#" 
-                className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500/30 transition-colors duration-200"
+                className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500/30 transition-all duration-200 fun-hover animate-bounce-slow"
                 data-testid="link-facebook"
+                whileHover={{ scale: 1.2, rotate: -15 }}
+                whileTap={{ scale: 0.9 }}
+                style={{ animationDelay: "0.1s" }}
               >
                 📘
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#" 
-                className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 hover:bg-green-500/30 transition-colors duration-200"
+                className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 hover:bg-green-500/30 transition-all duration-200 fun-hover animate-bounce-slow"
                 data-testid="link-whatsapp"
+                whileHover={{ scale: 1.2, rotate: 15 }}
+                whileTap={{ scale: 0.9 }}
+                style={{ animationDelay: "0.2s" }}
               >
                 💬
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
