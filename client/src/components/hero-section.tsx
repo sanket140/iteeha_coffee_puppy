@@ -56,20 +56,20 @@ const HeroSection = () => {
               <Link href="/order-landing">
                 <Button 
                   size="lg"
-                  className="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200 shadow-lg"
+                  className="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200 shadow-lg button-fun animate-pulse-soft"
                   data-testid="button-order-now"
                 >
-                  Order Now
+                  ☕ Order Now
                 </Button>
               </Link>
               <Link href="/about">
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="bg-card/20 backdrop-blur text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-card/30 transition-colors duration-200 border border-primary-foreground/20"
+                  className="bg-card/20 backdrop-blur text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-card/30 transition-colors duration-200 border border-primary-foreground/20 button-fun animate-wiggle"
                   data-testid="button-meet-pups"
                 >
-                  Meet Our Pups
+                  🐾 Meet Our Pups
                 </Button>
               </Link>
             </motion.div>

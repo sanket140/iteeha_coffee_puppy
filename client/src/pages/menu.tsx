@@ -70,10 +70,15 @@ const Menu = () => {
                   {getMenuByCategory("Matcha Specials").map((item, index) => (
                     <motion.div
                       key={item.id}
-                      className="bg-card rounded-2xl overflow-hidden shadow-lg card-hover"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="bg-card rounded-2xl overflow-hidden shadow-lg fun-card"
+                      initial={{ opacity: 0, y: 25, rotate: -2 }}
+                      animate={{ opacity: 1, y: 0, rotate: 0 }}
+                      transition={{ 
+                        duration: 0.7, 
+                        delay: index * 0.1,
+                        type: "spring",
+                        stiffness: 120
+                      }}
                       data-testid={`menu-item-${item.id}`}
                     >
                       {item.image && (
@@ -105,10 +110,10 @@ const Menu = () => {
                           {item.description}
                         </p>
                         <Button 
-                          className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 button-fun"
                           data-testid={`button-add-cart-${item.id}`}
                         >
-                          ADD TO CART
+                          🛒 ADD TO CART
                         </Button>
                       </div>
                     </motion.div>
@@ -127,10 +132,14 @@ const Menu = () => {
                   {getDisplayItems().map((item, index) => (
                     <motion.div
                       key={item.id}
-                      className="bg-card rounded-xl p-6 card-hover"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="bg-card rounded-xl p-6 fun-card"
+                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: index * 0.05,
+                        type: "spring"
+                      }}
                       data-testid={`menu-item-${item.id}`}
                     >
                       <div className="flex justify-between items-start mb-3">
@@ -168,10 +177,10 @@ const Menu = () => {
                       
                       <Button 
                         size="sm"
-                        className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/80 button-fun"
                         data-testid={`button-add-order-${item.id}`}
                       >
-                        Add to Order
+                        🍴 Add to Order
                       </Button>
                     </motion.div>
                   ))}
@@ -214,10 +223,10 @@ const Menu = () => {
               </p>
               <Button 
                 size="sm"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 button-fun animate-pulse-soft"
                 data-testid="button-order-online"
               >
-                Order Online Now
+                🎯 Order Online Now
               </Button>
             </div>
           </div>

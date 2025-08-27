@@ -50,10 +50,10 @@ const Navigation = () => {
             ))}
             <Link href="/order-landing">
               <Button 
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 button-fun"
                 data-testid="button-order-now"
               >
-                Order Now
+                ☕ Order Now
               </Button>
             </Link>
           </div>
@@ -92,10 +92,10 @@ const Navigation = () => {
               ))}
               <Link href="/order-landing" onClick={() => setIsOpen(false)}>
                 <Button 
-                  className="w-full mt-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="w-full mt-2 bg-primary text-primary-foreground hover:bg-primary/90 button-fun"
                   data-testid="mobile-button-order-now"
                 >
-                  Order Now
+                  ☕ Order Now
                 </Button>
               </Link>
             </div>

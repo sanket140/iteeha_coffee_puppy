@@ -145,10 +145,10 @@ const OrderLanding = () => {
               <Link href="/menu">
                 <Button 
                   size="lg"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 button-fun"
                   data-testid="button-confirm-location"
                 >
-                  Confirm Location & Browse Menu
+                  📍 Confirm Location & Browse Menu
                 </Button>
               </Link>
             </div>
@@ -196,27 +196,34 @@ const OrderLanding = () => {
             </div>
             
             {/* What's Waiting Section */}
-            <div className="bg-muted/50 rounded-xl p-6" data-testid="whats-waiting">
-              <h3 className="font-serif text-lg font-semibold text-foreground mb-4" data-testid="whats-waiting-title">
-                What's waiting for you
+            <div className="bg-gradient-to-br from-muted/30 to-muted/60 rounded-xl p-6 coffee-beans" data-testid="whats-waiting">
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-4 animate-wiggle" data-testid="whats-waiting-title">
+                🌟 What's waiting for you
               </h3>
-              <p className="text-muted-foreground mb-4" data-testid="whats-waiting-subtitle">
+              <p className="text-muted-foreground mb-6" data-testid="whats-waiting-subtitle">
                 A taste of our delicious offerings
               </p>
               
-              <div className="grid grid-cols-2 gap-4">
-                {features.map((feature) => (
-                  <div key={feature.id} className="space-y-2" data-testid={`feature-${feature.id}`}>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-lg" data-testid={`icon-${feature.id}`}>{feature.icon}</span>
-                      <span className="font-medium text-foreground text-sm" data-testid={`title-${feature.id}`}>
+              <div className="grid grid-cols-2 gap-6">
+                {features.map((feature, index) => (
+                  <motion.div 
+                    key={feature.id} 
+                    className="space-y-3 bg-card/50 rounded-lg p-4 fun-card" 
+                    data-testid={`feature-${feature.id}`}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1, type: "spring" }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl animate-bounce-slow" data-testid={`icon-${feature.id}`}>{feature.icon}</span>
+                      <span className="font-semibold text-foreground text-sm" data-testid={`title-${feature.id}`}>
                         {feature.title}
                       </span>
                     </div>
-                    <p className="text-xs text-muted-foreground" data-testid={`description-${feature.id}`}>
+                    <p className="text-xs text-muted-foreground leading-relaxed" data-testid={`description-${feature.id}`}>
                       {feature.description}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -242,10 +249,10 @@ const OrderLanding = () => {
           <Link href="/menu">
             <Button 
               size="lg"
-              className="bg-card text-card-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-card/90 transition-colors duration-200 shadow-lg"
+              className="bg-card text-card-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-card/90 transition-colors duration-200 shadow-lg button-fun animate-bounce-slow"
               data-testid="button-start-ordering"
             >
-              Start Ordering Now
+              🚀 Start Ordering Now
             </Button>
           </Link>
         </motion.div>

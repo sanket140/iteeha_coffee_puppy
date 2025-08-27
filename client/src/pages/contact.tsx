@@ -142,6 +142,7 @@ const Contact = () => {
                                 type="tel" 
                                 placeholder="+91 98765 43210" 
                                 {...field} 
+                                value={field.value || ""}
                                 data-testid="input-phone"
                               />
                             </FormControl>
