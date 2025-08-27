@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteeha Coffee & Pet Paradise - Coffee, Craft, Conversations & Cuddles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    popover: {
+                        DEFAULT: "var(--popover)",
+                        foreground: "var(--popover-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                    chart: {
+                        "1": "var(--chart-1)",
+                        "2": "var(--chart-2)",
+                        "3": "var(--chart-3)",
+                        "4": "var(--chart-4)",
+                        "5": "var(--chart-5)",
+                    }
+                },
+                fontFamily: {
+                    sans: ["var(--font-sans)"],
+                    serif: ["var(--font-serif)"],
+                    mono: ["var(--font-mono)"],
+                }
+            },
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(43 50% 96%);
+            --foreground: hsl(25 20% 15%);
+            --card: hsl(43 30% 98%);
+            --card-foreground: hsl(25 20% 15%);
+            --popover: hsl(43 30% 98%);
+            --popover-foreground: hsl(25 20% 15%);
+            --primary: hsl(25 60% 40%);
+            --primary-foreground: hsl(43 50% 96%);
+            --secondary: hsl(43 30% 88%);
+            --secondary-foreground: hsl(25 30% 25%);
+            --muted: hsl(43 20% 92%);
+            --muted-foreground: hsl(25 15% 45%);
+            --accent: hsl(33 80% 60%);
+            --accent-foreground: hsl(43 50% 96%);
+            --destructive: hsl(0 70% 50%);
+            --destructive-foreground: hsl(43 50% 96%);
+            --border: hsl(43 20% 85%);
+            --input: hsl(43 20% 85%);
+            --ring: hsl(25 60% 40%);
+            --radius: 0.75rem;
+            --font-sans: 'Inter', system-ui, sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: hsl(25 20% 8%);
+                --foreground: hsl(43 30% 92%);
+                --card: hsl(25 20% 12%);
+                --card-foreground: hsl(43 30% 92%);
+                --popover: hsl(25 20% 12%);
+                --popover-foreground: hsl(43 30% 92%);
+                --primary: hsl(33 70% 55%);
+                --primary-foreground: hsl(25 20% 8%);
+                --secondary: hsl(25 15% 18%);
+                --secondary-foreground: hsl(43 20% 85%);
+                --muted: hsl(25 12% 16%);
+                --muted-foreground: hsl(43 15% 65%);
+                --accent: hsl(33 80% 60%);
+                --accent-foreground: hsl(25 20% 8%);
+                --destructive: hsl(0 60% 45%);
+                --destructive-foreground: hsl(43 30% 92%);
+                --border: hsl(25 15% 20%);
+                --input: hsl(25 15% 20%);
+                --ring: hsl(33 70% 55%);
+            }
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .font-serif {
+            font-family: var(--font-serif);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .paw-print {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f59e0b' fill-opacity='0.1'%3E%3Cpath d='M10 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3 4c-2.2 0-4 1.8-4 4h8c0-2.2-1.8-4-4-4z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-background text-foreground">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [responsive mobile menu, active states] -->
+    <nav class="bg-card/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fas fa-paw text-primary-foreground text-lg"></i>
+                    </div>
+                    <span class="font-serif font-bold text-xl text-foreground">Iteeha Coffee</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-foreground hover:text-primary transition-colors duration-200 font-medium">Home</a>
+                    <a href="#menu" class="text-muted-foreground hover:text-primary transition-colors duration-200">Menu</a>
+                    <a href="#about" class="text-muted-foreground hover:text-primary transition-colors duration-200">About</a>
+                    <a href="#contact" class="text-muted-foreground hover:text-primary transition-colors duration-200">Contact</a>
+                    <a href="#order" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200">Order Now</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-foreground hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection [carousel, CTA buttons, responsive design] -->
+    <section id="home" class="hero-gradient text-primary-foreground relative overflow-hidden">
+        <div class="absolute inset-0 paw-print"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="font-serif text-5xl lg:text-7xl font-bold leading-tight">
+                            Coffee.<br>
+                            <span class="text-accent">Craft.</span><br>
+                            Conversations<br>
+                            & <span class="text-accent">Cuddles</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-primary-foreground/90 max-w-lg">
+                            Where every cup tells a story and every pup finds a friend.
+                        </p>
+                        <p class="text-lg text-primary-foreground/80">
+                            Pet-friendly space with toys, treats, and endless tail wags.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200 shadow-lg">
+                            Order Now
+                        </button>
+                        <button class="bg-card/20 backdrop-blur text-primary-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-card/30 transition-colors duration-200 border border-primary-foreground/20">
+                            Meet Our Pups
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center space-x-8 text-primary-foreground/90">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">12+</div>
+                            <div class="text-sm">Resident Pups</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">3</div>
+                            <div class="text-sm">Mumbai Locations</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">7:30-23:30</div>
+                            <div class="text-sm">Daily Hours</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Beautiful coffee scene with cozy cafe atmosphere -->
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" alt="Cozy cafe with beautiful latte art and warm atmosphere" class="rounded-2xl shadow-2xl animate-float"/>
+                    <div class="absolute -bottom-6 -right-6 bg-card rounded-xl p-4 shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-accent-foreground"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-card-foreground">Pet-Friendly</div>
+                                <div class="text-sm text-muted-foreground">Toys & Treats Available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- Featured Menu Items -->
+    <!-- @COMPONENT: FeaturedMenu [product cards, hover effects, pricing] -->
+    <section class="py-20 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground">Our Pup-ular Favorites</h2>
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    Handcrafted with premium ingredients and a dash of puppy love
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Golden Retriever Blend -->
+                <div class="bg-card rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <!-- Espresso with steamed milk and vanilla, golden caramel swirls -->
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Golden Retriever Blend - Espresso with steamed milk and vanilla topped with golden caramel swirls" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Golden's Choice</span>
+                            <span class="text-2xl font-bold text-foreground">₹225</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-foreground mb-2">Golden Retriever Blend</h3>
+                        <p class="text-muted-foreground mb-4">Espresso with steamed milk and vanilla, topped with golden caramel swirls</p>
+                        <button class="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pug's Espresso Delight -->
+                <div class="bg-card rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <!-- Rich, bold double shot espresso - concentrated and powerful -->
+                    <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Pug's Espresso Delight - Rich, bold double shot espresso served in small cup" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Pup's Pick</span>
+                            <span class="text-2xl font-bold text-foreground">₹160</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-foreground mb-2">Pug's Espresso Delight</h3>
+                        <p class="text-muted-foreground mb-4">Rich, bold double shot espresso - small but mighty, just like our pugs!</p>
+                        <button class="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Beagle's Matcha Magic -->
+                <div class="bg-card rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <!-- Premium matcha powder with steamed oat milk - bright green and energizing -->
+                    <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" alt="Beagle's Matcha Magic - Premium matcha latte with beautiful green foam art" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-green-500/20 text-green-600 px-3 py-1 rounded-full text-sm font-medium">Pup Special</span>
+                            <span class="text-2xl font-bold text-foreground">₹320</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-foreground mb-2">Beagle's Matcha Magic</h3>
+                        <p class="text-muted-foreground mb-4">Premium matcha powder with steamed oat milk - energetic and wholesome</p>
+                        <button class="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200">
+                    See Full Menu
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FeaturedMenu -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: AboutSection [company story, stats, mission] -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <!-- Beautiful coffee art with heart-shaped latte art -->
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Beautiful coffee art with heart-shaped latte art showcasing our craftsmanship" class="rounded-2xl shadow-lg"/>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <span class="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold">Our Story</span>
+                        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-4">
+                            Where Tradition Meets <span class="text-accent">Tail Wags</span>
+                        </h2>
+                    </div>
+                    
+                    <p class="text-lg text-muted-foreground leading-relaxed">
+                        As a cozy café in the heart of Mumbai, we are a quiet spot for you amidst the city's turmoil. Now with our furry friends joining the family, we've created an even more special place where coffee lovers and dog lovers unite in a pet-friendly paradise.
+                    </p>
+                    
+                    <p class="text-muted-foreground leading-relaxed">
+                        <strong>"Iteeha"</strong> roughly translates to <em>'as per tradition'</em>, and keeping that in mind, we adopted the virtue of doing <strong>'Basic but Beautiful'</strong> - now with an extra dose of puppy love. We offer premium pet foods, engaging toys, and a welcoming space for all furry friends.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">12+</div>
+                            <div class="text-muted-foreground">Resident Pups</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">3</div>
+                            <div class="text-muted-foreground">Mumbai Locations</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
+                        Learn More About Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Pet Services Section -->
+    <!-- @COMPONENT: PetServices [service cards, icons, features] -->
+    <section class="py-20 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground">Pet Paradise, Every Day</h2>
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    We provide everything your furry friend needs! Premium pet foods, engaging toys, and a completely pet-friendly environment where tails wag and hearts are happy.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card rounded-2xl p-8 text-center card-hover">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bone text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold text-foreground mb-4">Premium Pet Toys</h3>
+                    <p class="text-muted-foreground">Engaging toys to keep your furry friends entertained</p>
+                </div>
+                
+                <div class="bg-card rounded-2xl p-8 text-center card-hover">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bowl-food text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold text-foreground mb-4">Nutritious Pet Food</h3>
+                    <p class="text-muted-foreground">High-quality food and treats for happy, healthy pets</p>
+                </div>
+                
+                <div class="bg-card rounded-2xl p-8 text-center card-hover">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold text-foreground mb-4">Pet-Friendly Environment</h3>
+                    <p class="text-muted-foreground">Welcoming space where pets feel at home</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200">
+                    Visit Our Pet Paradise!
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PetServices -->
+
+    <!-- Menu Section -->
+    <!-- @COMPONENT: MenuSection [category tabs, item cards, pricing] -->
+    <section id="menu" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground">Our Menu</h2>
+                <p class="text-xl text-muted-foreground">
+                    Thoughtfully curated coffee, bakes, artisanal teas, and premium sandwiches - Basic but Beautiful
+                </p>
+                <div class="flex items-center justify-center space-x-8 text-muted-foreground">
+                    <span>₹500-1050 Cost for Two</span>
+                    <span>•</span>
+                    <span>7:30 AM - 11:30 PM All Days</span>
+                </div>
+            </div>
+            
+            <!-- Matcha Specials -->
+            <div class="mb-16">
+                <h3 class="font-serif text-3xl font-bold text-foreground mb-8 text-center">Matcha Specials</h3>
+                <p class="text-center text-muted-foreground mb-12">Premium matcha creations crafted with love</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- @MAP: matchaItems.map(item => ( -->
+                    <div class="bg-card rounded-2xl overflow-hidden shadow-lg card-hover" data-mock="true">
+                        <!-- Classic matcha latte with beautiful foam art and vibrant green color -->
+                        <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=300&h=200&fit=crop" alt="Classic Hot Matcha Latte with beautiful green foam art" class="w-full h-48 object-cover"/>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="flex items-center text-green-600">
+                                    <i class="fas fa-leaf text-sm mr-1"></i>
+                                    <span class="text-sm">Veg</span>
+                                </span>
+                                <span class="text-2xl font-bold text-foreground">₹320</span>
+                            </div>
+                            <h4 class="font-serif text-lg font-semibold text-foreground mb-2" data-bind="item.name">Classic Hot Matcha Latte</h4>
+                            <p class="text-muted-foreground mb-4" data-bind="item.description">A Smooth Blend Of Matcha And Steamed Milk</p>
+                            <button class="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200" data-event="click:addToCart">
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-2xl overflow-hidden shadow-lg card-hover" data-mock="true">
+                        <!-- Spiced matcha latte with ginger and warm spices -->
+                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=300&h=200&fit=crop" alt="Spiced Ginger Matcha Latte with aromatic ginger and spices" class="w-full h-48 object-cover"/>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="flex items-center text-green-600">
+                                    <i class="fas fa-leaf text-sm mr-1"></i>
+                                    <span class="text-sm">Veg</span>
+                                </span>
+                                <span class="text-2xl font-bold text-foreground">₹340</span>
+                            </div>
+                            <h4 class="font-serif text-lg font-semibold text-foreground mb-2">Spiced Ginger Matcha Latte</h4>
+                            <p class="text-muted-foreground mb-4">Matcha And Steamed Milk With House Made Ginger Syrup</p>
+                            <button class="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-2xl overflow-hidden shadow-lg card-hover" data-mock="true">
+                        <!-- Blueberry matcha latte with fresh blueberry compote -->
+                        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300&h=200&fit=crop" alt="Blueberry Matcha Latte with fresh blueberry compote and vibrant colors" class="w-full h-48 object-cover"/>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="flex items-center text-green-600">
+                                    <i class="fas fa-leaf text-sm mr-1"></i>
+                                    <span class="text-sm">Veg</span>
+                                </span>
+                                <span class="text-2xl font-bold text-foreground">₹380</span>
+                            </div>
+                            <h4 class="font-serif text-lg font-semibold text-foreground mb-2">Blueberry Matcha Latte</h4>
+                            <p class="text-muted-foreground mb-4">Matcha And Milk With Blueberry Compote</p>
+                            <button class="w-full bg-primary text-primary-foreground py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+            
+            <!-- Coffee & Espresso Section -->
+            <div class="mb-16">
+                <h3 class="font-serif text-3xl font-bold text-foreground mb-8 text-center">Coffee & Espresso</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- @MAP: coffeeItems.map(item => ( -->
+                    <div class="bg-card rounded-xl p-6 card-hover" data-mock="true">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="font-serif text-lg font-semibold text-foreground" data-bind="item.name">Espresso</h4>
+                            <span class="text-xl font-bold text-foreground" data-bind="item.price">₹160</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm mb-3" data-bind="item.description">Rich, bold, concentrated shot</p>
+                        <p class="text-xs text-accent mb-4">Fresh • Made to Order ✨</p>
+                        <button class="w-full bg-secondary text-secondary-foreground py-2 rounded-lg text-sm font-medium hover:bg-secondary/80 transition-colors duration-200">
+                            Add to Order
+                        </button>
+                    </div>
+                    
+                    <div class="bg-card rounded-xl p-6 card-hover" data-mock="true">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="font-serif text-lg font-semibold text-foreground">Latte</h4>
+                            <span class="text-xl font-bold text-foreground">₹200</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm mb-3">Smooth espresso with steamed milk and light foam</p>
+                        <p class="text-xs text-accent mb-4">Fresh • Made to Order ✨</p>
+                        <button class="w-full bg-secondary text-secondary-foreground py-2 rounded-lg text-sm font-medium hover:bg-secondary/80 transition-colors duration-200">
+                            Add to Order
+                        </button>
+                    </div>
+                    
+                    <div class="bg-card rounded-xl p-6 card-hover" data-mock="true">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="font-serif text-lg font-semibold text-foreground">Cappuccino</h4>
+                            <span class="text-xl font-bold text-foreground">₹190</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm mb-3">Perfect balance of espresso, steamed milk, and foam</p>
+                        <p class="text-xs text-accent mb-4">Fresh • Made to Order ✨</p>
+                        <button class="w-full bg-secondary text-secondary-foreground py-2 rounded-lg text-sm font-medium hover:bg-secondary/80 transition-colors duration-200">
+                            Add to Order
+                        </button>
+                    </div>
+                    
+                    <div class="bg-card rounded-xl p-6 card-hover" data-mock="true">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="font-serif text-lg font-semibold text-foreground">Mocha</h4>
+                            <span class="text-xl font-bold text-foreground">₹220</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm mb-3">Espresso with chocolate and steamed milk</p>
+                        <p class="text-xs text-accent mb-4">Fresh • Made to Order ✨</p>
+                        <button class="w-full bg-secondary text-secondary-foreground py-2 rounded-lg text-sm font-medium hover:bg-secondary/80 transition-colors duration-200">
+                            Add to Order
+                        </button>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="bg-accent text-accent-foreground px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent/90 transition-colors duration-200">
+                    View Complete Menu
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: MenuSection -->
+
+    <!-- Testimonials -->
+    <!-- @COMPONENT: TestimonialsSection [customer reviews, ratings, avatars] -->
+    <section class="py-20 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground">Coffee Stories & Pup Tales</h2>
+                <p class="text-xl text-muted-foreground">
+                    What our coffee lovers and pet parents say about their magical experiences
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="bg-card rounded-2xl p-8 card-hover" data-mock="true">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <!-- Portrait of Sarah M., a cheerful woman with coffee -->
+                        <img src="https://pixabay.com/get/gcdda261fe5a021092c0776398802f7a87d0248f86361ee6a5162e33c1c1cc47144c49f6166ccf9ce4c5a9ad150422a71a9fd970bae371570674404144a5d2d61_1280.jpg" alt="Sarah M. - Coffee and dog enthusiast smiling" class="w-16 h-16 rounded-full object-cover"/>
+                        <div>
+                            <div class="font-semibold text-foreground" data-bind="testimonial.name">Sarah M.</div>
+                            <div class="text-sm text-muted-foreground" data-bind="testimonial.title">Coffee & Dog Enthusiast ✨</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground leading-relaxed" data-bind="testimonial.content">
+                        "This place feels like stepping into a coffee wonderland! The pups make every visit special, and they even have amazing pet toys and treats!"
+                    </p>
+                </div>
+                
+                <div class="bg-card rounded-2xl p-8 card-hover" data-mock="true">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <!-- Portrait of Rahul K., a professional man with a friendly smile -->
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" alt="Rahul K. - Pet parent and regular visitor" class="w-16 h-16 rounded-full object-cover"/>
+                        <div>
+                            <div class="font-semibold text-foreground">Rahul K.</div>
+                            <div class="text-sm text-muted-foreground">Pet Parent & Regular Visitor ⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground leading-relaxed">
+                        "Perfect place to bring my furry friend! Great coffee for me, delicious pet food for my dog, and toys to keep him entertained. Charlie loves it here!"
+                    </p>
+                </div>
+                
+                <div class="bg-card rounded-2xl p-8 card-hover" data-mock="true">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <!-- Portrait of Priya S., a business professional woman -->
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" alt="Priya S. - Business professional enjoying the pet-friendly environment" class="w-16 h-16 rounded-full object-cover"/>
+                        <div>
+                            <div class="font-semibold text-foreground">Priya S.</div>
+                            <div class="text-sm text-muted-foreground">Business Professional 💼</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground leading-relaxed">
+                        "Amazing pet-friendly environment! I can work here with my laptop while my dog enjoys their special treats and toys. The staff is so welcoming to pets!"
+                    </p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- Order Section -->
+    <!-- @COMPONENT: OrderSection [order process, location input, delivery options] -->
+    <section id="order" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <!-- Coffee cup with steam rising, representing freshness -->
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=120&h=120&fit=crop&crop=center" alt="Fresh coffee cup with steam, representing hot delivery" class="w-16 h-16 rounded-full object-cover"/>
+                        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground">Let's get ordering</h2>
+                    </div>
+                    <p class="text-xl text-muted-foreground">
+                        Craving something delicious? Let us bring the finest coffee and treats right to your doorstep.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex space-x-4">
+                            <button class="bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
+                                Delivery
+                            </button>
+                            <button class="bg-secondary text-secondary-foreground px-6 py-3 rounded-xl font-semibold hover:bg-secondary/80 transition-colors duration-200">
+                                Pickup
+                            </button>
+                        </div>
+                        
+                        <div class="bg-card rounded-xl p-6">
+                            <h3 class="font-semibold text-foreground mb-4">Where would you like your order?</h3>
+                            <p class="text-muted-foreground mb-4">We'll deliver fresh and hot to your location</p>
+                            
+                            <div class="space-y-4">
+                                <button class="w-full bg-accent/20 text-accent border-2 border-accent/30 py-3 rounded-lg font-medium hover:bg-accent/30 transition-colors duration-200 flex items-center justify-center space-x-2">
+                                    <i class="fas fa-location-arrow"></i>
+                                    <span>Use my current location</span>
+                                </button>
+                                <input type="text" placeholder="or enter manually" class="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" data-implementation="Location autocomplete component"/>
+                            </div>
+                            
+                            <button class="w-full bg-primary text-primary-foreground py-4 rounded-xl text-lg font-semibold hover:bg-primary/90 transition-colors duration-200 mt-6">
+                                Confirm Location & Browse Menu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <h3 class="font-serif text-2xl font-semibold text-foreground">How it works</h3>
+                    <p class="text-muted-foreground">Simple steps to satisfy your cravings</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-primary font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground mb-2">Set your location</h4>
+                                <p class="text-muted-foreground">Tell us where you want to get your items delivered with precision</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-accent font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground mb-2">Choose your items</h4>
+                                <p class="text-muted-foreground">Browse our curated menu and add your favorite treats to cart</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-green-600 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground mb-2">Enjoy fresh delivery</h4>
+                                <p class="text-muted-foreground">Sit back and relax while we deliver hot, fresh items to your doorstep</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-muted/50 rounded-xl p-6">
+                        <h4 class="font-serif text-lg font-semibold text-foreground mb-4">What's waiting for you</h4>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-coffee text-accent"></i>
+                                <span class="text-muted-foreground">Premium Coffee</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-bread-slice text-accent"></i>
+                                <span class="text-muted-foreground">Fresh Food</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-shipping-fast text-accent"></i>
+                                <span class="text-muted-foreground">Fast Delivery</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-star text-accent"></i>
+                                <span class="text-muted-foreground">Quality First</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: OrderSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [contact form, locations, social links] -->
+    <section id="contact" class="py-20 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-foreground">Come Sip & Snuggle With Us</h2>
+                <p class="text-xl text-muted-foreground">
+                    We're brewing daily from 7:30 AM to 11:30 PM. Find us in the heart of Mumbai with our furry friends and pet paradise!
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-card rounded-2xl p-8">
+                    <h3 class="font-serif text-2xl font-semibold text-foreground mb-6">Send us a Message</h3>
+                    
+                    <form class="space-y-6" data-implementation="Contact form with validation">
+                        <!-- @STATE: formData:object = {name: '', email: '', phone: '', contactPerson: '', message: ''} -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" data-bind="formData.name"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Email *</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" data-bind="formData.email"/>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" data-bind="formData.phone"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Contact Person *</label>
+                                <select required class="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-ring" data-bind="formData.contactPerson">
+                                    <option>Please Select Person</option>
+                                    <option>General Inquiry</option>
+                                    <option>Store Manager</option>
+                                    <option>Catering Services</option>
+                                    <option>Feedback</option>
+                                    <option>Partnerships</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Message *</label>
+                            <textarea required rows="4" class="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none" data-bind="formData.message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-primary-foreground py-4 rounded-xl text-lg font-semibold hover:bg-primary/90 transition-colors duration-200" data-event="click:handleSubmit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Locations -->
+                <div class="space-y-8">
+                    <div class="bg-card rounded-2xl p-8">
+                        <h3 class="font-serif text-2xl font-semibold text-foreground mb-6">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-foreground">Email</div>
+                                    <div class="text-muted-foreground">connect@iteeha.coffee</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-foreground">Hours</div>
+                                    <div class="text-muted-foreground">7:30 AM - 11:30 PM<br>All Days</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-instagram text-pink-500"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-foreground">Follow Us</div>
+                                    <div class="text-muted-foreground">@iteeha.coffee</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-2xl p-8">
+                        <h3 class="font-serif text-2xl font-semibold text-foreground mb-6">Our Locations</h3>
+                        <p class="text-muted-foreground mb-6">Visit us at any of our cozy Mumbai locations</p>
+                        
+                        <div class="space-y-6">
+                            <!-- @MAP: locations.map(location => ( -->
+                            <div class="border border-border rounded-xl p-4" data-mock="true">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-semibold text-foreground" data-bind="location.name">Mahalaxmi</h4>
+                                    <span class="text-sm bg-accent/20 text-accent px-2 py-1 rounded-full" data-bind="location.pups">5 Resident Pups🐾</span>
+                                </div>
+                                <p class="text-sm text-muted-foreground mb-2" data-bind="location.address">Ground Floor, Urmi Axis Building, West, behind Famous studio, opp. Doctor Elijah Moses Road, Mahalakshmi, Mumbai, Maharashtra 400011</p>
+                                <p class="text-xs text-green-600" data-bind="location.feature">Dog-Friendly Patio</p>
+                            </div>
+                            
+                            <div class="border border-border rounded-xl p-4" data-mock="true">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-semibold text-foreground">Lower Parel</h4>
+                                    <span class="text-sm bg-accent/20 text-accent px-2 py-1 rounded-full">4 Resident Pups🐾</span>
+                                </div>
+                                <p class="text-sm text-muted-foreground mb-2">95, Ganpatrao Kadam Marg, Opposite Peninsula Business Park, Lower Parel West, Mumbai, Maharashtra 400013</p>
+                                <p class="text-xs text-green-600">Indoor Play Area</p>
+                            </div>
+                            
+                            <div class="border border-border rounded-xl p-4" data-mock="true">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-semibold text-foreground">Bandra West</h4>
+                                    <span class="text-sm bg-accent/20 text-accent px-2 py-1 rounded-full">3 Resident Pups🐾</span>
+                                </div>
+                                <p class="text-sm text-muted-foreground mb-2">Shop 6, Shanti Vanam, Hill Road, Bandra West, Mumbai</p>
+                                <p class="text-xs text-green-600">Cozy Corner Seating</p>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [links, social media, contact info, newsletter] -->
+    <footer class="bg-card border-t border-border py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                            <i class="fas fa-paw text-primary-foreground text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-serif font-bold text-2xl text-foreground">Iteeha Coffee</div>
+                            <div class="text-sm text-muted-foreground">& Pet Paradise</div>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground max-w-md">
+                        Where every cup tells a story and every pup finds a friend. Experience the perfect blend of premium coffee and pet-friendly hospitality.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <span class="text-muted-foreground">connect@iteeha.coffee</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-accent"></i>
+                            <span class="text-muted-foreground">7:30 AM - 11:30 PM</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-accent"></i>
+                            <span class="text-muted-foreground">3 Mumbai Locations</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-paw text-accent"></i>
+                            <span class="text-muted-foreground">12+ Resident Pups</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-foreground mb-4">Quick Links</h3>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-muted-foreground hover:text-primary transition-colors duration-200">Home</a>
+                        <a href="#menu" class="block text-muted-foreground hover:text-primary transition-colors duration-200">Our Menu</a>
+                        <a href="#about" class="block text-muted-foreground hover:text-primary transition-colors duration-200">About Us</a>
+                        <a href="#order" class="block text-muted-foreground hover:text-primary transition-colors duration-200">Order Online</a>
+                        <a href="#contact" class="block text-muted-foreground hover:text-primary transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-foreground mb-4">Pet Services</h3>
+                    <div class="space-y-3">
+                        <div class="text-muted-foreground">Premium Pet Food</div>
+                        <div class="text-muted-foreground">Interactive Toys</div>
+                        <div class="text-muted-foreground">Pet-Friendly Seating</div>
+                        <div class="text-muted-foreground">Dog Play Areas</div>
+                        <div class="text-muted-foreground">Pet Treats</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-border pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-muted-foreground text-sm">
+                        © 2024 Iteeha Coffee & Pet Paradise. All rights reserved. Made with ❤️ for coffee and dog lovers.
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="https://www.instagram.com/iteeha.coffee/" class="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-500 hover:bg-pink-500/30 transition-colors duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500/30 transition-colors duration-200">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 hover:bg-green-500/30 transition-colors duration-200">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile menu toggle
+        (function() {
+            // TODO: Implement mobile menu toggle functionality
+            // TODO: Add smooth scrolling for navigation links
+            // TODO: Implement order form validation
+            // TODO: Add cart functionality for menu items
+            // TODO: Implement location services for order section
+            // TODO: Add contact form submission handling
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
