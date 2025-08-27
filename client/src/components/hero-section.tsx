@@ -38,32 +38,35 @@ const HeroSection = () => {
           >
             <div className="space-y-4">
               <motion.h1 
-                className="font-serif text-5xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
+                className="font-serif text-5xl lg:text-7xl font-bold leading-tight text-white drop-shadow-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 data-testid="hero-title"
+                style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}
               >
                 <span className="text-white">Coffee.</span><br />
-                <span className="text-accent drop-shadow-md">Craft.</span><br />
+                <span className="text-yellow-300 drop-shadow-md">Craft.</span><br />
                 <span className="text-white">Conversations</span><br />
-                <span className="text-white">& </span><span className="text-accent drop-shadow-md">Cuddles</span>
+                <span className="text-white">& </span><span className="text-yellow-300 drop-shadow-md">Cuddles</span>
               </motion.h1>
               <motion.p 
-                className="text-xl lg:text-2xl text-white font-medium max-w-lg drop-shadow-md"
+                className="text-xl lg:text-2xl text-white font-medium max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 data-testid="hero-subtitle"
+                style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}
               >
                 Where every cup tells a story and every pup finds a friend.
               </motion.p>
               <motion.p 
-                className="text-lg text-white/95 font-medium drop-shadow-sm"
+                className="text-lg text-white font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 data-testid="hero-description"
+                style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}
               >
                 Pet-friendly space with toys, treats, and endless tail wags.
               </motion.p>
@@ -97,22 +100,22 @@ const HeroSection = () => {
             </motion.div>
             
             <motion.div 
-              className="flex items-center space-x-8 text-white/95 drop-shadow-sm"
+              className="flex items-center space-x-8 text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300" data-testid="stat-pups">
-                <div className="text-2xl font-bold text-accent">12+</div>
-                <div className="text-sm text-white font-medium">Resident Pups</div>
+              <div className="text-center bg-black/30 backdrop-blur-sm rounded-xl p-4 hover:bg-black/40 transition-all duration-300 border border-white/20" data-testid="stat-pups">
+                <div className="text-2xl font-bold text-yellow-300" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>12+</div>
+                <div className="text-sm text-white font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Resident Pups</div>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300" data-testid="stat-locations">
-                <div className="text-2xl font-bold text-accent">3</div>
-                <div className="text-sm text-white font-medium">Mumbai Locations</div>
+              <div className="text-center bg-black/30 backdrop-blur-sm rounded-xl p-4 hover:bg-black/40 transition-all duration-300 border border-white/20" data-testid="stat-locations">
+                <div className="text-2xl font-bold text-yellow-300" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>3</div>
+                <div className="text-sm text-white font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Mumbai Locations</div>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300" data-testid="stat-hours">
-                <div className="text-2xl font-bold text-accent">7:30-23:30</div>
-                <div className="text-sm text-white font-medium">Daily Hours</div>
+              <div className="text-center bg-black/30 backdrop-blur-sm rounded-xl p-4 hover:bg-black/40 transition-all duration-300 border border-white/20" data-testid="stat-hours">
+                <div className="text-2xl font-bold text-yellow-300" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>7:30-23:30</div>
+                <div className="text-sm text-white font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Daily Hours</div>
               </div>
             </motion.div>
           </motion.div>
